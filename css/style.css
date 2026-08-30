@@ -802,7 +802,7 @@ button{
 }
 
 /* =========================================================
-   PERBAIKAN PETA DI TAMPILAN MOBILE
+   PERBAIKAN MAP MOBILE (PETA KIRI, INFO KANAN)
 ========================================================= */
 
 @media (max-width: 760px) {
