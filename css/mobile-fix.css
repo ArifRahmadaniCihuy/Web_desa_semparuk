@@ -235,3 +235,32 @@ html body .map-info {
   width: 100% !important;
   height: 100% !important;
 }
+
+/* =========================================================
+   FIX HERO HEIGHT UNTUK DESKTOP MODE DI HP
+========================================================= */
+
+html body .hero {
+  height: 60vh !important;
+  max-height: 480px !important;
+  min-height: 380px !important;
+  aspect-ratio: 16 / 9 !important;
+}
+
+html body .hero-slider,
+html body .hero-slide {
+  height: 100% !important;
+}
+
+html body .hero-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Penyesuaian jarak teks di dalam hero agar tetap presisi */
+html body .hero-content {
+  padding-top: 40px !important;
+  padding-bottom: 20px !important;
+}
