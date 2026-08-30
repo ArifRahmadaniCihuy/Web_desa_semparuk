@@ -213,35 +213,40 @@ button{
    HERO
 ========================================================= */
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  color:#fff;
-  overflow:hidden;
-  background:linear-gradient(120deg,#3d75aa,#3d75aa 45%,#3d75aa);
-  position:relative
+.hero {
+  /* Mengganti min-height: 100vh dengan rasio & batas tinggi yang pas */
+  width: 100%;
+  aspect-ratio: 16 / 9;         /* Memaksa bentuk persegi panjang proporsional */
+  min-height: 320px;            /* Batas minimal agar konten teks tetap muat */
+  max-height: 520px;            /* Batas maksimal agar tidak memanjang di layar tinggi */
+  display: flex;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  background: linear-gradient(120deg, #3d75aa, #3d75aa 45%, #3d75aa);
+  position: relative;
 }
 
-.hero-slider{
-  position:absolute;
-  inset:0;
-  overflow:hidden
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 
-.hero-slide{
-  position:absolute;
-  inset:0;
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  transform:scale(1.08);
-  transition:opacity .9s ease,transform 1.2s ease
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; /* Memastikan gambar tidak terulang */
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity .9s ease, transform 1.2s ease;
 }
 
-.hero-slide.active{
-  opacity:1;
-  transform:scale(1)
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .hero-bg{
