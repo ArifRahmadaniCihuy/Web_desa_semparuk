@@ -195,3 +195,43 @@
     width: 100%;
   }
 }
+
+/* =========================================================
+   FIX FOR DESKTOP MODE ON MOBILE DEVICES
+========================================================= */
+
+/* 1. Kunci Tinggi Hero Carousel agar tidak terlalu panjang ke bawah */
+.hero, 
+.hero-slider, 
+.hero-slide {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  min-height: 500px !important;
+  overflow: hidden !important;
+}
+
+.hero-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* 2. Kunci Layout Peta (Peta di Kiri, Informasi di Kanan) */
+html body .map-layout {
+  display: grid !important;
+  grid-template-columns: 1.2fr 0.8fr !important; /* Terbagi Kiri dan Kanan */
+  gap: 20px !important;
+  align-items: stretch !important;
+}
+
+html body .map {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 380px !important;
+}
+
+html body .map-info {
+  width: 100% !important;
+  height: 100% !important;
+}
