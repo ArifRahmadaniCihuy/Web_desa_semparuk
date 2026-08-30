@@ -1,0 +1,197 @@
+/* =========================================================
+   MOBILE FIXES & RESPONSIVE IMPROVEMENTS
+   File ini khusus untuk menangani tampilan Mobile/Tablet
+   tanpa merubah file CSS utama.
+========================================================= */
+
+@media (max-width: 768px) {
+  
+  /* --- 1. GLOBAL & CONTAINER --- */
+  .container {
+    width: calc(100% - 32px) !important;
+    padding: 0 4px;
+  }
+
+  .section {
+    padding: 60px 0 !important;
+  }
+
+  /* --- 2. NAVBAR & MOBILE MENU --- */
+  .navbar {
+    height: 70px !important;
+    padding: 0 16px !important;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(2, 13, 27, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Hide drawer by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0 !important;
+    font-size: 15px !important;
+  }
+
+  /* --- 3. HERO SECTION --- */
+  .hero-content {
+    padding-top: 100px !important;
+    text-align: left;
+  }
+
+  .hero-content h1 {
+    font-size: 38px !important;
+    line-height: 1.15 !important;
+  }
+
+  .hero-desc {
+    font-size: 14px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-nav {
+    display: none !important; /* Sembunyikan panah di mobile agar tidak menutupi teks */
+  }
+
+  /* --- 4. TENTANG DESA / STORY LAYOUT --- */
+  .story-layout {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .story-image {
+    min-height: 240px !important;
+  }
+
+  /* --- 5. LOCATION GRID --- */
+  .location-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* --- 6. STATISTIK --- */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .stat-card {
+    min-height: 140px !important;
+    padding: 16px !important;
+  }
+
+  .stat-card strong {
+    font-size: 28px !important;
+  }
+
+  /* --- 7. POTENSI WILAYAH --- */
+  .potential-item {
+    grid-template-columns: 35px 1fr 20px !important;
+    gap: 12px !important;
+    padding: 18px 0 !important;
+  }
+
+  .potential-item h3 {
+    font-size: 16px !important;
+  }
+
+  /* --- 8. GALERI --- */
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 12px !important;
+  }
+
+  .gallery-large {
+    grid-row: span 1 !important;
+  }
+
+  .gallery-grid .gallery-item:nth-child(4),
+  .gallery-grid .gallery-item:nth-child(5) {
+    grid-column: span 1 !important;
+  }
+
+  .gallery-item {
+    height: 220px;
+  }
+
+  /* --- 9. PETA / MAP SECTION --- */
+  .map-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .map {
+    height: 300px !important;
+    min-height: 300px !important;
+  }
+
+  .map-info {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+
+  /* --- 10. CONTACT SECTION --- */
+  .contact-box {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- 11. FOOTER --- */
+  .site-footer .container {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .site-footer .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+}
