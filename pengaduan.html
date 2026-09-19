@@ -1,0 +1,931 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Layanan pengaduan Desa Semparuk Sutera, Kecamatan Semparuk, Kabupaten Sambas, Kalimantan Barat."
+    >
+
+    <title>Pengaduan — Semparuk Sutera</title>
+
+
+    <!-- GOOGLE FONT SAMA DENGAN INDEX -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS WEBSITE -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="css/detail.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/mobile-fix.css?v=1.1"
+    >
+
+    <!-- CSS KHUSUS PENGADUAN -->
+    <link
+        rel="stylesheet"
+        href="css/pengaduan.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+     SAMA DENGAN INDEX.HTML
+===================================================== -->
+
+<header class="navbar" id="navbar">
+
+    <a
+        class="brand"
+        href="index.html#beranda"
+        aria-label="Semparuk Sutera"
+    >
+
+        <span class="brand-logo">
+            <img
+                src="assets/images/logo.png"
+                alt="Logo Semparuk Sutera"
+            >
+        </span>
+
+
+        <span>
+
+            <strong>
+                Semparuk Sutera
+            </strong>
+
+            <small>
+                Semparuk • Sambas
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Buka menu"
+        aria-expanded="false"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <nav
+        class="nav-links"
+        id="navLinks"
+    >
+
+        <a
+            href="index.html#beranda"
+            class="nav-link"
+        >
+            Beranda
+        </a>
+
+
+        <a
+            href="index.html#tentang"
+            class="nav-link"
+        >
+            Tentang Desa
+        </a>
+
+
+        <a
+            href="index.html#lokasi"
+            class="nav-link"
+        >
+            Lokasi
+        </a>
+
+
+        <a
+            href="index.html#statistik"
+            class="nav-link"
+        >
+            Statistik
+        </a>
+
+
+        <a
+            href="index.html#peta"
+            class="nav-link"
+        >
+            Peta
+        </a>
+
+
+        <a
+            href="pengaduan.html"
+            class="nav-link"
+        >
+            Pengaduan
+        </a>
+
+
+        <a
+            href="admin.html"
+            class="nav-link"
+        >
+            Admin
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO PENGADUAN
+===================================================== -->
+
+      <!-- HERO -->
+      <section class="hero section" id="beranda">
+        <div
+          class="hero-slider"
+          aria-label="Slider foto Welcome Semparuk Sutera"
+        >
+          <div
+            class="hero-slide active"
+            style="background-image: url(&quot;assets/images/slide1.jpg&quot;)"
+          ></div>
+          <div
+            class="hero-slide"
+            style="background-image: url(&quot;assets/images/slide2.jpg&quot;)"
+          ></div>
+          <div
+            class="hero-slide"
+            style="background-image: url(&quot;assets/images/slide3.jpg&quot;)"
+          ></div>
+          <div
+            class="hero-slide"
+            style="background-image: url(&quot;assets/images/slide4.jpg&quot;)"
+          ></div>
+          <div
+            class="hero-slide"
+            style="background-image: url(&quot;assets/images/slide5.jpg&quot;)"
+          ></div>
+        </div>
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-nav hero-prev" aria-label="Slide sebelumnya">←</div>
+        <div class="hero-nav hero-next" aria-label="Slide berikutnya">→</div>
+
+        <div class="container hero-content reveal">
+          <div class="eyebrow"><span></span> Profil & Potensi Wilayah</div>
+          <h1>Semparuk<br /></h1>
+          <h1>Sutera<br /></h1>
+          <p class="hero-location">
+            Kecamatan Semparuk · Kabupaten Sambas · Kalimantan Barat
+          </p>
+          <p class="hero-desc">
+            Mengenal lingkungan, masyarakat, potensi, dan kehidupan Semparuk
+            Sutera melalui sebuah ruang digital yang informatif dan mudah
+            dijelajahi.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#lokasi"
+              >Jelajahi Wilayah <span>↗</span></a
+            >
+            <a class="btn btn-primary" href="#tentang"
+              >Tentang Semparuk Sutera <span>↗</span></a
+            >
+          </div>
+
+          <div class="hero-note">
+            <span class="pulse-dot"></span>
+            <span>Semparuk, Kabupaten Sambas</span>
+          </div>
+        </div>
+
+        <div class="slider-dots" aria-label="Indikator slide">
+          <button
+            class="dot active"
+            type="button"
+            aria-label="Slide 1"
+          ></button>
+          <button class="dot" type="button" aria-label="Slide 2"></button>
+          <button class="dot" type="button" aria-label="Slide 3"></button>
+          <button class="dot" type="button" aria-label="Slide 4"></button>
+          <button class="dot" type="button" aria-label="Slide 5"></button>
+        </div>
+
+        <div class="scroll-hint">
+          <span>Scroll untuk menjelajah</span>
+          <i></i>
+        </div>
+      </section>
+
+
+
+<!-- =====================================================
+     FORM PENGADUAN
+===================================================== -->
+
+<section class="section complaint-section">
+
+    <div class="container">
+
+        <div class="complaint-layout">
+
+
+            <!-- INFORMASI -->
+            <div class="complaint-intro reveal">
+
+                <div class="eyebrow dark">
+
+                    <span></span>
+
+                    PENGADUAN DESA
+
+                </div>
+
+
+                <h2>
+
+                    Suara Anda
+                    <em>penting.</em>
+
+                </h2>
+
+
+                <p>
+
+                    Gunakan formulir ini untuk menyampaikan
+                    pengaduan kepada Desa Semparuk Sutera.
+                    Setiap pengaduan akan dicatat dan dapat
+                    dipantau menggunakan token pengaduan.
+
+                </p>
+
+
+                <div class="complaint-steps">
+
+
+                    <div class="complaint-step">
+
+                        <span>01</span>
+
+                        <div>
+
+                            <strong>
+                                Isi Pengaduan
+                            </strong>
+
+                            <p>
+                                Lengkapi data dan tuliskan
+                                pengaduan yang ingin disampaikan.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="complaint-step">
+
+                        <span>02</span>
+
+                        <div>
+
+                            <strong>
+                                Dapatkan Token
+                            </strong>
+
+                            <p>
+                                Setelah dikirim, Anda akan
+                                mendapatkan token secara otomatis.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="complaint-step">
+
+                        <span>03</span>
+
+                        <div>
+
+                            <strong>
+                                Pantau Pengaduan
+                            </strong>
+
+                            <p>
+                                Gunakan token untuk melihat
+                                status dan tanggapan admin.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM -->
+            <div class="complaint-form-wrap reveal">
+
+
+                <div class="complaint-form-header">
+
+                    <div>
+
+                        <span>
+                            FORMULIR
+                        </span>
+
+                        <h3>
+                            Buat Pengaduan
+                        </h3>
+
+                    </div>
+
+
+                    <small>
+                        * Wajib diisi
+                    </small>
+
+                </div>
+
+
+
+                <form id="formPengaduan">
+
+
+                    <!-- NAMA + NOMOR -->
+                    <div class="form-grid">
+
+
+                        <div class="form-field">
+
+                            <label for="nama">
+                                Nama Lengkap
+                                <b>*</b>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nama"
+                                placeholder="Masukkan nama lengkap"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-field">
+
+                            <label for="no_hp">
+                                Nomor WhatsApp
+                                <b>*</b>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="no_hp"
+                                placeholder="08xxxxxxxxxx"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- KATEGORI -->
+                    <div class="form-field">
+
+                        <label for="kategori">
+                            Kategori Pengaduan
+                            <b>*</b>
+                        </label>
+
+
+                        <select
+                            id="kategori"
+                            required
+                        >
+
+                            <option value="">
+                                Pilih kategori pengaduan
+                            </option>
+
+                            <option value="Pelayanan">
+                                Pelayanan
+                            </option>
+
+                            <option value="Administrasi">
+                                Administrasi
+                            </option>
+
+                            <option value="Infrastruktur">
+                                Infrastruktur
+                            </option>
+
+                            <option value="Jalan">
+                                Jalan
+                            </option>
+
+                            <option value="Kebersihan">
+                                Kebersihan
+                            </option>
+
+                            <option value="Lainnya">
+                                Lainnya
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- PENGADUAN -->
+                    <div class="form-field">
+
+                        <label for="pengaduan">
+                            Isi Pengaduan
+                            <b>*</b>
+                        </label>
+
+
+                        <textarea
+                            id="pengaduan"
+                            rows="7"
+                            placeholder="Tuliskan pengaduan atau keluhan Anda..."
+                            required
+                        ></textarea>
+
+
+                        <small class="field-help">
+                            Jelaskan pengaduan secara jelas agar
+                            dapat ditindaklanjuti dengan baik.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- FOTO -->
+                    <div class="form-field">
+
+                        <label for="foto">
+                            Foto Bukti
+                            <small>
+                                (Opsional)
+                            </small>
+                        </label>
+
+
+                        <label
+                            class="upload-area"
+                            for="foto"
+                        >
+
+                            <div class="upload-icon">
+                                ↑
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Pilih foto bukti
+                                </strong>
+
+                                <span>
+                                    JPG, JPEG atau PNG • Maks. 5 MB
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="file"
+                                id="foto"
+                                accept="image/*"
+                            >
+
+                        </label>
+
+
+                        <div
+                            id="fileName"
+                            class="file-name"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- BUTTON -->
+                    <button
+                        type="submit"
+                        class="complaint-submit"
+                        id="submitButton"
+                    >
+
+                        <span>
+                            Kirim Pengaduan
+                        </span>
+
+                        <b>
+                            →
+                        </b>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- =================================================
+                     HASIL TOKEN
+                ================================================= -->
+
+                <div
+                    class="token-result"
+                    id="hasil"
+                    style="display:none;"
+                >
+
+                    <div class="token-success-icon">
+                        ✓
+                    </div>
+
+
+                    <span class="eyebrow-small">
+                        PENGADUAN BERHASIL
+                    </span>
+
+
+                    <h3>
+                        Pengaduan berhasil dikirim
+                    </h3>
+
+
+                    <p>
+                        Simpan token berikut untuk melihat
+                        perkembangan pengaduan Anda.
+                    </p>
+
+
+                    <div class="token-box">
+
+                        <strong id="tokenHasil">
+                            -
+                        </strong>
+
+
+                        <button
+                            type="button"
+                            id="copyTokenButton"
+                            onclick="salinToken()"
+                        >
+                            Salin
+                        </button>
+
+                    </div>
+
+
+                    <a
+                        href="cek-pengaduan.html"
+                        class="token-check-btn"
+                    >
+                        Cek Pengaduan
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CEK PENGADUAN
+===================================================== -->
+
+<section class="section section-green complaint-check">
+
+    <div class="container">
+
+        <div class="complaint-check-inner reveal">
+
+
+            <div>
+
+                <div class="eyebrow light">
+
+                    <span></span>
+
+                    LACAK PENGADUAN
+
+                </div>
+
+
+                <h2>
+
+                    Sudah memiliki
+                    <em>token?</em>
+
+                </h2>
+
+
+                <p>
+
+                    Masukkan token pengaduan untuk melihat
+                    status dan tanggapan terbaru dari admin.
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="cek-pengaduan.html"
+                class="btn btn-primary"
+            >
+
+                Cek Pengaduan
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-col">
+
+            <div class="brand">
+
+                <div class="brand-logo">
+
+                    <img
+                        src="assets/images/logo.png"
+                        alt="Logo Semparuk Sutera"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Semparuk Sutera
+                    </strong>
+
+                    <small>
+                        Desa & Informasi
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <p
+                style="
+                    margin-top:12px;
+                    color:var(--muted);
+                    font-size:13px;
+                "
+            >
+
+                Menyajikan informasi desa,
+                pelayanan, dan informasi masyarakat.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Link Cepat
+            </h4>
+
+
+            <div class="footer-links">
+
+                <a href="index.html#lokasi">
+                    Lokasi
+                </a>
+
+                <a href="index.html#statistik">
+                    Statistik
+                </a>
+
+                <a href="pengaduan.html">
+                    Pengaduan
+                </a>
+
+                <a href="admin.html">
+                    Admin
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Informasi
+            </h4>
+
+
+            <div
+                style="
+                    color:var(--muted);
+                    font-size:13px;
+                "
+            >
+
+                <div>
+                    Desa Semparuk Sutera
+                </div>
+
+                <div>
+                    Kecamatan Semparuk
+                </div>
+
+                <div>
+                    Kabupaten Sambas
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div style="color:var(--muted)">
+
+                ©
+                <span id="year"></span>
+                Semparuk Sutera — Semua hak cipta.
+
+            </div>
+
+
+            <div style="color:var(--muted)">
+
+                Dikembangkan oleh Arif
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- BACK TO TOP -->
+
+<button
+    id="backTop"
+    class="back-top"
+    aria-label="Kembali ke atas"
+>
+    ↑
+</button>
+
+
+
+<!-- SCRIPT WEBSITE ASLI -->
+
+<script src="js/script.js"></script>
+
+
+<!-- SCRIPT PENGADUAN -->
+
+<script src="js/pengaduan.js"></script>
+
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+    /*
+     * Menampilkan nama file
+     * setelah pengguna memilih foto.
+     */
+
+    const fotoInput =
+        document.getElementById("foto");
+
+    const fileName =
+        document.getElementById("fileName");
+
+
+    fotoInput.addEventListener(
+        "change",
+        function () {
+
+            if (this.files.length > 0) {
+
+                fileName.textContent =
+                    "File dipilih: " +
+                    this.files[0].name;
+
+            } else {
+
+                fileName.textContent = "";
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

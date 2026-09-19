@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Login Admin | Semparuk Sutera</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+           ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            font-family:
+                "DM Sans",
+                Arial,
+                sans-serif;
+
+            color: #ffffff;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(45, 130, 196, 0.16),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(29, 109, 168, 0.14),
+                    transparent 30%
+                ),
+                #061728;
+
+            overflow: hidden;
+
+        }
+
+
+        /* =====================================================
+           BACKGROUND DECORATION
+           ===================================================== */
+
+        .background {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+        }
+
+
+        .grid {
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0.035;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.7) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.7) 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+
+        }
+
+
+        .orb {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            filter: blur(2px);
+
+        }
+
+
+        .orb-one {
+
+            width: 260px;
+            height: 260px;
+
+            top: -120px;
+            left: -100px;
+
+            border:
+                1px solid
+                rgba(75,155,210,0.15);
+
+            box-shadow:
+                0 0 100px
+                rgba(45,130,196,0.12);
+
+        }
+
+
+        .orb-two {
+
+            width: 350px;
+            height: 350px;
+
+            right: -180px;
+            bottom: -180px;
+
+            border:
+                1px solid
+                rgba(75,155,210,0.12);
+
+            box-shadow:
+                0 0 120px
+                rgba(29,109,168,0.12);
+
+        }
+
+
+        /* =====================================================
+           LOGIN CONTAINER
+           ===================================================== */
+
+        .login-wrapper {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 100%;
+            max-width: 420px;
+
+            animation:
+                loginAppear 0.7s ease both;
+
+        }
+
+
+        @keyframes loginAppear {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px)
+                    scale(0.98);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           LOGIN CARD
+           ===================================================== */
+
+        .login-card {
+
+            position: relative;
+
+            padding: 42px 38px 35px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.09);
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(16,61,99,0.40),
+                    rgba(6,23,40,0.78)
+                );
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,0.28),
+
+                inset 0 1px 0
+                rgba(255,255,255,0.05);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            overflow: hidden;
+
+        }
+
+
+        /* garis biru atas */
+
+        .login-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #2d82c4,
+                    #79b7df,
+                    transparent
+                );
+
+        }
+
+
+        /* =====================================================
+           LOGO
+           ===================================================== */
+
+        .logo-wrapper {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .logo {
+
+            width: 72px;
+            height: 72px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 9px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.12),
+                    rgba(255,255,255,0.04)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,0.18);
+
+        }
+
+
+        .logo img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+        }
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        .login-header {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .login-label {
+
+            display: inline-block;
+
+            margin-bottom: 12px;
+
+            padding:
+                6px 11px;
+
+            border:
+                1px solid
+                rgba(75,155,210,0.20);
+
+            border-radius: 999px;
+
+            background:
+                rgba(45,130,196,0.08);
+
+            color: #79b7df;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.13em;
+
+        }
+
+
+        .login-header h1 {
+
+            margin-bottom: 9px;
+
+            color: #ffffff;
+
+            font-size: 28px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.03em;
+
+        }
+
+
+        .login-header p {
+
+            color:
+                rgba(255,255,255,0.52);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           FORM
+           ===================================================== */
+
+        .form-group {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color:
+                rgba(255,255,255,0.72);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+        }
+
+
+        .input-wrapper {
+
+            position: relative;
+
+        }
+
+
+        .input-icon {
+
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            color: #4b9bd2;
+
+            font-size: 15px;
+
+            pointer-events: none;
+
+        }
+
+
+        .form-input {
+
+            width: 100%;
+
+            height: 52px;
+
+            padding:
+                0 16px 0 44px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            border-radius: 13px;
+
+            outline: none;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            transition:
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
+
+        }
+
+
+        .form-input::placeholder {
+
+            color:
+                rgba(255,255,255,0.30);
+
+        }
+
+
+        .form-input:hover {
+
+            border-color:
+                rgba(75,155,210,0.30);
+
+        }
+
+
+        .form-input:focus {
+
+            border-color:
+                rgba(75,155,210,0.75);
+
+            background:
+                rgba(45,130,196,0.07);
+
+            box-shadow:
+                0 0 0 4px
+                rgba(45,130,196,0.08);
+
+        }
+
+
+        /* =====================================================
+           PASSWORD TOGGLE
+           ===================================================== */
+
+        .password-toggle {
+
+            position: absolute;
+
+            top: 50%;
+            right: 14px;
+
+            transform:
+                translateY(-50%);
+
+            border: none;
+
+            background: none;
+
+            color:
+                rgba(255,255,255,0.40);
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            transition:
+                color 0.2s ease;
+
+        }
+
+
+        .password-toggle:hover {
+
+            color: #79b7df;
+
+        }
+
+
+        #password {
+
+            padding-right: 45px;
+
+        }
+
+
+        /* =====================================================
+           LOGIN BUTTON
+           ===================================================== */
+
+        .login-button {
+
+            width: 100%;
+
+            height: 53px;
+
+            margin-top: 8px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #103d63,
+                    #1d6da8
+                );
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.01em;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 28px
+                rgba(29,109,168,0.24);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                filter 0.25s ease;
+
+        }
+
+
+        .login-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 17px 35px
+                rgba(29,109,168,0.32);
+
+            filter:
+                brightness(1.08);
+
+        }
+
+
+        .login-button:active {
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* =====================================================
+           ERROR MESSAGE
+           ===================================================== */
+
+        #errorMessage {
+
+            min-height: 18px;
+
+            margin-top: 13px;
+
+            color: #79b7df;
+
+            font-size: 11px;
+
+            text-align: center;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        .login-footer {
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            text-align: center;
+
+        }
+
+
+        .login-footer span {
+
+            color:
+                rgba(255,255,255,0.30);
+
+            font-size: 10px;
+
+        }
+
+
+        .login-footer a {
+
+            display: inline-block;
+
+            margin-top: 8px;
+
+            color:
+                rgba(255,255,255,0.55);
+
+            font-size: 11px;
+
+            text-decoration: none;
+
+            transition:
+                color 0.2s ease;
+
+        }
+
+
+        .login-footer a:hover {
+
+            color: #79b7df;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 500px) {
+
+            body {
+
+                padding: 16px;
+
+            }
+
+
+            .login-card {
+
+                padding:
+                    34px 23px 28px;
+
+                border-radius: 23px;
+
+            }
+
+
+            .logo {
+
+                width: 65px;
+                height: 65px;
+
+                border-radius: 19px;
+
+            }
+
+
+            .login-header h1 {
+
+                font-size: 25px;
+
+            }
+
+        }
+
+
+        @media (max-width: 360px) {
+
+            .login-card {
+
+                padding:
+                    30px 18px 25px;
+
+            }
+
+
+            .login-header h1 {
+
+                font-size: 23px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           ACCESSIBILITY
+           ===================================================== */
+
+        button:focus-visible,
+        input:focus-visible,
+        a:focus-visible {
+
+            outline:
+                2px solid
+                #4b9bd2;
+
+            outline-offset: 3px;
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                transition-duration:
+                    0.01ms !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div class="background">
+
+    <div class="grid"></div>
+
+    <div class="orb orb-one"></div>
+
+    <div class="orb orb-two"></div>
+
+</div>
+
+
+
+<!-- LOGIN -->
+
+<main class="login-wrapper">
+
+    <section class="login-card">
+
+
+        <!-- LOGO -->
+
+        <div class="logo-wrapper">
+
+            <div class="logo">
+
+                <img
+                    src="assets/images/logo.png"
+                    alt="Logo Semparuk Sutera">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HEADER -->
+
+        <div class="login-header">
+
+            <span class="login-label">
+                ADMIN ACCESS
+            </span>
+
+            <h1>
+                Selamat Datang
+            </h1>
+
+            <p>
+                Masuk ke panel administrasi
+                Desa Semparuk Sutera.
+            </p>
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <form
+            id="loginForm"
+            onsubmit="loginAdmin(event)">
+
+
+            <!-- USERNAME -->
+
+            <div class="form-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        ◉
+                    </span>
+
+                    <input
+                        type="text"
+                        id="username"
+                        class="form-input"
+                        placeholder="Masukkan username"
+                        autocomplete="username"
+                        required>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span class="input-icon">
+                        ◆
+                    </span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        class="form-input"
+                        placeholder="Masukkan password"
+                        autocomplete="current-password"
+                        required>
+
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        id="passwordToggle"
+                        onclick="togglePassword()"
+                        aria-label="Tampilkan password">
+
+                        ◉
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BUTTON -->
+
+            <button
+                type="submit"
+                class="login-button">
+
+                Masuk ke Dashboard
+
+            </button>
+
+
+            <!-- ERROR -->
+
+            <div id="errorMessage"></div>
+
+
+        </form>
+
+
+
+        <!-- FOOTER -->
+
+        <div class="login-footer">
+
+            <span>
+                Sistem Administrasi
+                Desa Semparuk Sutera
+            </span>
+
+            <br>
+
+            <a href="index.html">
+                ← Kembali ke Website
+            </a>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<script>
+
+
+/* =====================================================
+   LOGIN ADMIN
+   ===================================================== */
+
+function loginAdmin(event) {
+
+    event.preventDefault();
+
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+
+    const errorMessage =
+        document.getElementById("errorMessage");
+
+
+    /*
+     * DATA LOGIN
+     */
+
+    const validUsername = "admin";
+
+    const validPassword = "cihuy123";
+
+
+    if (
+        username === validUsername &&
+        password === validPassword
+    ) {
+
+        /*
+         * Simpan status login
+         */
+
+        sessionStorage.setItem(
+            "adminLoggedIn",
+            "true"
+        );
+
+
+        /*
+         * Masuk ke dashboard
+         */
+
+        window.location.href =
+            "admin.html";
+
+    }
+
+    else {
+
+        errorMessage.textContent =
+            "Username atau password salah.";
+
+    }
+
+}
+
+
+/* =====================================================
+   SHOW / HIDE PASSWORD
+   ===================================================== */
+
+function togglePassword() {
+
+    const password =
+        document.getElementById("password");
+
+    const button =
+        document.getElementById("passwordToggle");
+
+
+    if (
+        password.type === "password"
+    ) {
+
+        password.type = "text";
+
+        button.textContent = "◌";
+
+    }
+
+    else {
+
+        password.type = "password";
+
+        button.textContent = "◉";
+
+    }
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2378 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Pengaduan | Semparuk Sutera</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+     ===================================================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-logo">
+            <img
+                src="assets/images/logo.png"
+                alt="Logo Semparuk Sutera">
+        </div>
+
+        <div class="brand-text">
+            <strong>Semparuk Sutera</strong>
+            <span>Admin Panel</span>
+        </div>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="#dashboard" class="sidebar-link active">
+
+            <span class="sidebar-icon">⌂</span>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <a href="#pengaduan" class="sidebar-link">
+
+            <span class="sidebar-icon">▤</span>
+
+            <span>Pengaduan</span>
+
+        </a>
+
+
+        <a href="index.html" class="sidebar-link">
+
+            <span class="sidebar-icon">↗</span>
+
+            <span>Lihat Website</span>
+
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <button
+            type="button"
+            class="logout-button"
+            onclick="logoutAdmin()">
+
+            <span class="sidebar-icon">⇥</span>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =====================================================
+     MOBILE OVERLAY
+     ===================================================== -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay">
+</div>
+
+
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
+<div class="main-wrapper">
+
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <button
+                type="button"
+                class="menu-button"
+                id="menuButton"
+                aria-label="Buka menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <div>
+
+                <span class="topbar-small">
+                    Sistem Administrasi
+                </span>
+
+                <h1>
+                    Dashboard Admin
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-profile">
+
+            <div class="admin-avatar">
+                A
+            </div>
+
+            <div class="admin-profile-text">
+
+                <strong>Administrator</strong>
+
+                <span>Admin Pengaduan</span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         CONTENT
+         ================================================= -->
+
+    <main class="dashboard-content" id="dashboard">
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome-card">
+
+            <div class="welcome-content">
+
+                <span class="welcome-label">
+                    ADMIN PANEL
+                </span>
+
+                <h2>
+                    Selamat Datang, Administrator
+                </h2>
+
+                <p>
+                    Kelola dan pantau pengaduan masyarakat
+                    Desa Semparuk Sutera dengan mudah melalui
+                    dashboard ini.
+                </p>
+
+            </div>
+
+
+            <div class="welcome-decoration">
+
+                <div class="decoration-circle circle-one"></div>
+
+                <div class="decoration-circle circle-two"></div>
+
+                <div class="decoration-icon">
+                    ✓
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATISTIK
+             ================================================= -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon blue">
+                    ▤
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Pengaduan
+                    </span>
+
+                    <strong id="totalPengaduan">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon pending">
+                    ◷
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Menunggu
+                    </span>
+
+                    <strong id="totalMenunggu">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon process">
+                    ↻
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Diproses
+                    </span>
+
+                    <strong id="totalDiproses">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon selesai">
+                    ✓
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Selesai
+                    </span>
+
+                    <strong id="totalSelesai">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PENGADUAN
+             ================================================= -->
+
+        <section
+            class="complaint-panel"
+            id="pengaduan">
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="section-label">
+                        DATA MASYARAKAT
+                    </span>
+
+                    <h2>
+                        Daftar Pengaduan
+                    </h2>
+
+                    <p>
+                        Kelola pengaduan yang masuk dari
+                        masyarakat Desa Semparuk Sutera.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="refresh-button"
+                    id="refreshButton"
+                    onclick="loadPengaduan()">
+
+                    <span>↻</span>
+
+                    Refresh
+
+                </button>
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="filter-bar">
+
+
+                <div class="search-box">
+
+                    <span class="search-icon">
+                        ⌕
+                    </span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Cari nama, token, atau pengaduan..."
+                        autocomplete="off">
+
+                </div>
+
+
+                <select
+                    id="statusFilter"
+                    class="status-filter">
+
+                    <option value="semua">
+                        Semua Status
+                    </option>
+
+                    <option value="Menunggu">
+                        Menunggu
+                    </option>
+
+                    <option value="Diproses">
+                        Diproses
+                    </option>
+
+                    <option value="Selesai">
+                        Selesai
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Token
+                            </th>
+
+                            <th>
+                                Nama
+                            </th>
+
+                            <th>
+                                Kategori
+                            </th>
+
+                            <th>
+                                Pengaduan
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Aksi
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="pengaduanTableBody">
+
+                        <tr id="emptyState">
+
+                            <td
+                                colspan="6"
+                                class="empty-state">
+
+                                <div class="empty-icon">
+                                    ▤
+                                </div>
+
+                                <strong>
+                                    Memuat pengaduan...
+                                </strong>
+
+                                <span>
+                                    Mohon tunggu sebentar.
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<!-- =====================================================
+     DETAIL MODAL
+     ===================================================== -->
+
+<div
+    class="modal"
+    id="detailModal"
+    aria-hidden="true">
+
+    <div class="modal-overlay"></div>
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="section-label">
+                    DETAIL PENGADUAN
+                </span>
+
+                <h2>
+                    Detail Laporan
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="closeDetail()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-content">
+
+
+            <div class="detail-grid">
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Token
+                    </span>
+
+                    <strong id="detailToken">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Nama
+                    </span>
+
+                    <strong id="detailNama">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Nomor WhatsApp
+                    </span>
+
+                    <strong id="detailNoHp">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Kategori
+                    </span>
+
+                    <strong id="detailKategori">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Tanggal
+                    </span>
+
+                    <strong id="detailTanggal">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong id="detailStatus">
+                        -
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="detail-message">
+
+                <span>
+                    Isi Pengaduan
+                </span>
+
+                <p id="detailPengaduan">
+                    -
+                </p>
+
+            </div>
+
+
+            <div class="response-section">
+
+                <label for="responseText">
+                    Balasan Admin
+                </label>
+
+                <textarea
+                    id="responseText"
+                    rows="5"
+                    placeholder="Tulis balasan untuk masyarakat..."></textarea>
+
+            </div>
+
+
+            <div class="status-section">
+
+                <label for="detailStatusSelect">
+                    Ubah Status
+                </label>
+
+                <select id="detailStatusSelect">
+
+                    <option value="Menunggu">
+                        Menunggu
+                    </option>
+
+                    <option value="Diproses">
+                        Diproses
+                    </option>
+
+                    <option value="Selesai">
+                        Selesai
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="button-secondary"
+                onclick="closeDetail()">
+
+                Tutup
+
+            </button>
+
+
+            <button
+                type="button"
+                class="button-primary"
+                id="saveButton"
+                onclick="simpanPerubahan()">
+
+                Simpan Perubahan
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SCRIPT
+     ===================================================== -->
+
+<script>
+
+    /* =====================================================
+       GOOGLE APPS SCRIPT
+       ===================================================== */
+
+    const API_URL =
+        "https://script.google.com/macros/s/AKfycbyUtz3cxKdNYkQDWsgiwEhSe3lAgD4L4hC9ApiHNGABX9LYxDl6l943q-Dxy1df_XiU/exec";
+
+
+    /* =====================================================
+       CEK LOGIN
+       ===================================================== */
+
+    if (
+        sessionStorage.getItem("adminLoggedIn") !== "true"
+    ) {
+
+        window.location.href = "login.html";
+
+    }
+
+
+    /* =====================================================
+       VARIABEL
+       ===================================================== */
+
+    let semuaPengaduan = [];
+
+    let pengaduanTerpilih = null;
+
+    let sedangMemuat = false;
+
+
+    /* =====================================================
+       MENU MOBILE
+       ===================================================== */
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+    const sidebarOverlay =
+        document.getElementById("sidebarOverlay");
+
+
+    if (menuButton) {
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.toggle("open");
+
+                sidebarOverlay.classList.toggle("show");
+
+            }
+        );
+
+    }
+
+
+    if (sidebarOverlay) {
+
+        sidebarOverlay.addEventListener(
+            "click",
+            function () {
+
+                sidebar.classList.remove("open");
+
+                sidebarOverlay.classList.remove("show");
+
+            }
+        );
+
+    }
+
+
+    document
+        .querySelectorAll(".sidebar-link")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    sidebar.classList.remove("open");
+
+                    sidebarOverlay.classList.remove("show");
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       LOAD PENGADUAN
+       ===================================================== */
+
+    async function loadPengaduan() {
+
+        /*
+         * Mencegah request ganda
+         */
+
+        if (sedangMemuat) {
+            return;
+        }
+
+
+        sedangMemuat = true;
+
+
+        const tableBody =
+            document.getElementById(
+                "pengaduanTableBody"
+            );
+
+
+        const refreshButton =
+            document.getElementById(
+                "refreshButton"
+            );
+
+
+        /*
+         * Ubah tombol menjadi loading
+         */
+
+        if (refreshButton) {
+
+            refreshButton.disabled = true;
+
+            refreshButton.innerHTML =
+                "<span>↻</span> Memuat...";
+
+        }
+
+
+        /*
+         * Tampilkan loading di tabel
+         */
+
+        if (tableBody) {
+
+            tableBody.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="6"
+                        class="empty-state">
+
+                        <div class="empty-icon">
+                            ↻
+                        </div>
+
+                        <strong>
+                            Memuat pengaduan...
+                        </strong>
+
+                        <span>
+                            Mohon tunggu sebentar.
+                        </span>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+
+
+        /*
+         * Controller untuk timeout
+         */
+
+        const controller =
+            new AbortController();
+
+
+        /*
+         * Maksimal menunggu 8 detik
+         */
+
+        const timeout =
+            setTimeout(
+                function () {
+
+                    controller.abort();
+
+                },
+                8000
+            );
+
+
+        try {
+
+            /*
+             * Endpoint GET
+             */
+
+            const url =
+                API_URL +
+                "?action=getPengaduan&_=" +
+                Date.now();
+
+
+            console.log(
+                "Mengambil data:",
+                url
+            );
+
+
+            const response =
+                await fetch(
+                    url,
+                    {
+                        method: "GET",
+
+                        redirect: "follow",
+
+                        cache: "no-store",
+
+                        signal: controller.signal
+                    }
+                );
+
+
+            clearTimeout(timeout);
+
+
+            /*
+             * Cek HTTP
+             */
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Server mengembalikan HTTP " +
+                    response.status
+                );
+
+            }
+
+
+            /*
+             * Ambil response sebagai text
+             */
+
+            const text =
+                await response.text();
+
+
+            console.log(
+                "Response Apps Script:",
+                text
+            );
+
+
+            /*
+             * Response kosong
+             */
+
+            if (
+                !text ||
+                !text.trim()
+            ) {
+
+                throw new Error(
+                    "Apps Script tidak mengirim data."
+                );
+
+            }
+
+
+            /*
+             * Parse JSON
+             */
+
+            let result;
+
+
+            try {
+
+                result =
+                    JSON.parse(text);
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Response bukan JSON:",
+                    text
+                );
+
+
+                throw new Error(
+                    "Response Apps Script bukan JSON."
+                );
+
+            }
+
+
+            console.log(
+                "JSON Apps Script:",
+                result
+            );
+
+
+            /*
+             * Cek apakah Apps Script
+             * mengirim error
+             */
+
+            if (
+                result &&
+                result.success === false
+            ) {
+
+                throw new Error(
+                    result.message ||
+                    "Apps Script mengembalikan error."
+                );
+
+            }
+
+
+            /*
+             * Ambil array data
+             */
+
+            let data = [];
+
+
+            if (
+                Array.isArray(result)
+            ) {
+
+                data =
+                    result;
+
+            }
+
+            else if (
+                result &&
+                Array.isArray(result.data)
+            ) {
+
+                data =
+                    result.data;
+
+            }
+
+            else if (
+                result &&
+                Array.isArray(result.pengaduan)
+            ) {
+
+                data =
+                    result.pengaduan;
+
+            }
+
+            else if (
+                result &&
+                Array.isArray(result.rows)
+            ) {
+
+                data =
+                    result.rows;
+
+            }
+
+            else {
+
+                data = [];
+
+            }
+
+
+            /*
+             * Normalisasi data
+             */
+
+            semuaPengaduan =
+                data.map(
+                    function (item) {
+
+                        /*
+                         * Kalau data berbentuk array
+                         * bukan object
+                         */
+
+                        if (
+                            Array.isArray(item)
+                        ) {
+
+                            return {
+
+                                id:
+                                    item[0] || "",
+
+                                token:
+                                    item[1] || "",
+
+                                tanggal:
+                                    item[2] || "",
+
+                                nama:
+                                    item[3] || "",
+
+                                no_hp:
+                                    item[4] || "",
+
+                                kategori:
+                                    item[5] || "",
+
+                                pengaduan:
+                                    item[6] || "",
+
+                                foto:
+                                    item[7] || "",
+
+                                status:
+                                    item[8] ||
+                                    "Menunggu",
+
+                                tanggapan:
+                                    item[9] || "",
+
+                                tanggal_tanggapan:
+                                    item[10] || ""
+
+                            };
+
+                        }
+
+
+                        /*
+                         * Kalau data berbentuk object
+                         */
+
+                        return {
+
+                            id:
+                                item.id ??
+                                item.ID ??
+                                "",
+
+
+                            token:
+                                item.token ??
+                                item.Token ??
+                                item.TOKEN ??
+                                "",
+
+
+                            tanggal:
+                                item.tanggal ??
+                                item.Tanggal ??
+                                item.timestamp ??
+                                item.Timestamp ??
+                                "",
+
+
+                            nama:
+                                item.nama ??
+                                item.Nama ??
+                                "",
+
+
+                            no_hp:
+                                item.no_hp ??
+                                item.noHp ??
+                                item.No_HP ??
+                                item["No HP"] ??
+                                item.nomor_hp ??
+                                item.nomorHp ??
+                                "",
+
+
+                            kategori:
+                                item.kategori ??
+                                item.Kategori ??
+                                "",
+
+
+                            pengaduan:
+                                item.pengaduan ??
+                                item.Pengaduan ??
+                                item.isi_pengaduan ??
+                                item.isiPengaduan ??
+                                "",
+
+
+                            foto:
+                                item.foto ??
+                                item.Foto ??
+                                "",
+
+
+                            status:
+                                item.status ??
+                                item.Status ??
+                                "Menunggu",
+
+
+                            tanggapan:
+                                item.tanggapan ??
+                                item.tanggapan_admin ??
+                                item.tanggapanAdmin ??
+                                item.Tanggapan ??
+                                item.Tanggapan_Admin ??
+                                "",
+
+
+                            tanggal_tanggapan:
+                                item.tanggal_tanggapan ??
+                                item.tanggalTanggapan ??
+                                item.Tanggal_Tanggapan ??
+                                ""
+
+                        };
+
+                    }
+                );
+
+
+            console.log(
+                "Jumlah pengaduan:",
+                semuaPengaduan.length
+            );
+
+
+            /*
+             * Update statistik
+             */
+
+            updateStatistik();
+
+
+            /*
+             * Tampilkan tabel
+             */
+
+            tampilkanPengaduan();
+
+
+        }
+
+        catch (error) {
+
+            clearTimeout(timeout);
+
+
+            console.error(
+                "Gagal memuat pengaduan:",
+                error
+            );
+
+
+            semuaPengaduan = [];
+
+
+            updateStatistik();
+
+
+            /*
+             * Pesan khusus timeout
+             */
+
+            let pesan =
+                error.message;
+
+
+            if (
+                error.name === "AbortError"
+            ) {
+
+                pesan =
+                    "Koneksi ke Google Apps Script terlalu lama. Pastikan Web App Apps Script sudah aktif dan dapat diakses.";
+
+            }
+
+
+            if (tableBody) {
+
+                tableBody.innerHTML = `
+
+                    <tr>
+
+                        <td
+                            colspan="6"
+                            class="empty-state">
+
+                            <div class="empty-icon">
+                                !
+                            </div>
+
+                            <strong>
+                                Gagal memuat pengaduan
+                            </strong>
+
+                            <span>
+                                ${escapeHTML(pesan)}
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            }
+
+        }
+
+        finally {
+
+            sedangMemuat = false;
+
+
+            if (refreshButton) {
+
+                refreshButton.disabled = false;
+
+                refreshButton.innerHTML =
+                    "<span>↻</span> Refresh";
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       TAMPILKAN PENGADUAN
+       ===================================================== */
+
+    function tampilkanPengaduan() {
+
+        const tableBody =
+            document.getElementById(
+                "pengaduanTableBody"
+            );
+
+
+        if (!tableBody) {
+            return;
+        }
+
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+
+        const statusFilter =
+            document.getElementById(
+                "statusFilter"
+            );
+
+
+        const keyword =
+            searchInput
+                ? searchInput.value
+                    .toLowerCase()
+                    .trim()
+                : "";
+
+
+        const statusDipilih =
+            statusFilter
+                ? statusFilter.value
+                : "semua";
+
+
+        const dataFilter =
+            semuaPengaduan.filter(
+                function (item) {
+
+                    const nama =
+                        String(
+                            item.nama || ""
+                        ).toLowerCase();
+
+
+                    const token =
+                        String(
+                            item.token || ""
+                        ).toLowerCase();
+
+
+                    const pengaduan =
+                        String(
+                            item.pengaduan || ""
+                        ).toLowerCase();
+
+
+                    const kategori =
+                        String(
+                            item.kategori || ""
+                        ).toLowerCase();
+
+
+                    const status =
+                        String(
+                            item.status ||
+                            "Menunggu"
+                        ).toLowerCase();
+
+
+                    const cocokKeyword =
+                        !keyword ||
+                        nama.includes(keyword) ||
+                        token.includes(keyword) ||
+                        kategori.includes(keyword) ||
+                        pengaduan.includes(keyword);
+
+
+                    const cocokStatus =
+                        statusDipilih === "semua" ||
+                        status ===
+                        statusDipilih.toLowerCase();
+
+
+                    return (
+                        cocokKeyword &&
+                        cocokStatus
+                    );
+
+                }
+            );
+
+
+        tableBody.innerHTML = "";
+
+
+        if (
+            dataFilter.length === 0
+        ) {
+
+            tableBody.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="6"
+                        class="empty-state">
+
+                        <div class="empty-icon">
+                            ▤
+                        </div>
+
+                        <strong>
+                            Belum ada pengaduan
+                        </strong>
+
+                        <span>
+                            Data pengaduan akan muncul
+                            di sini.
+                        </span>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        dataFilter.forEach(
+            function (item) {
+
+                const row =
+                    document.createElement(
+                        "tr"
+                    );
+
+
+                const status =
+                    item.status ||
+                    "Menunggu";
+
+
+                let statusClass =
+                    "pending";
+
+
+                if (
+                    status.toLowerCase() ===
+                    "diproses"
+                ) {
+
+                    statusClass =
+                        "process";
+
+                }
+
+                else if (
+                    status.toLowerCase() ===
+                    "selesai"
+                ) {
+
+                    statusClass =
+                        "selesai";
+
+                }
+
+
+                row.innerHTML = `
+
+                    <td>
+
+                        <strong>
+                            ${escapeHTML(
+                                item.token || "-"
+                            )}
+                        </strong>
+
+                    </td>
+
+
+                    <td>
+                        ${escapeHTML(
+                            item.nama || "-"
+                        )}
+                    </td>
+
+
+                    <td>
+                        ${escapeHTML(
+                            item.kategori || "-"
+                        )}
+                    </td>
+
+
+                    <td>
+                        ${escapeHTML(
+                            potongTeks(
+                                item.pengaduan || "-",
+                                60
+                            )
+                        )}
+                    </td>
+
+
+                    <td>
+
+                        <span
+                            class="status-badge ${statusClass}">
+
+                            ${escapeHTML(
+                                status
+                            )}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <button
+                            type="button"
+                            class="button-primary"
+                            onclick="openDetailByToken('${escapeJS(
+                                item.token
+                            )}')">
+
+                            Detail
+
+                        </button>
+
+                    </td>
+
+                `;
+
+
+                tableBody.appendChild(
+                    row
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       OPEN DETAIL
+       ===================================================== */
+
+    function openDetailByToken(
+        token
+    ) {
+
+        const data =
+            semuaPengaduan.find(
+                function (item) {
+
+                    return String(
+                        item.token
+                    ) ===
+                    String(token);
+
+                }
+            );
+
+
+        if (!data) {
+
+            alert(
+                "Data pengaduan tidak ditemukan."
+            );
+
+            return;
+
+        }
+
+
+        openDetail(data);
+
+    }
+
+
+    function openDetail(
+        data
+    ) {
+
+        const modal =
+            document.getElementById(
+                "detailModal"
+            );
+
+
+        if (!modal) {
+            return;
+        }
+
+
+        pengaduanTerpilih =
+            data;
+
+
+        document.getElementById(
+            "detailToken"
+        ).textContent =
+            data.token || "-";
+
+
+        document.getElementById(
+            "detailNama"
+        ).textContent =
+            data.nama || "-";
+
+
+        document.getElementById(
+            "detailNoHp"
+        ).textContent =
+            data.no_hp || "-";
+
+
+        document.getElementById(
+            "detailKategori"
+        ).textContent =
+            data.kategori || "-";
+
+
+        document.getElementById(
+            "detailTanggal"
+        ).textContent =
+            formatTanggal(
+                data.tanggal
+            );
+
+
+        document.getElementById(
+            "detailStatus"
+        ).textContent =
+            data.status ||
+            "Menunggu";
+
+
+        document.getElementById(
+            "detailPengaduan"
+        ).textContent =
+            data.pengaduan || "-";
+
+
+        document.getElementById(
+            "responseText"
+        ).value =
+            data.tanggapan || "";
+
+
+        document.getElementById(
+            "detailStatusSelect"
+        ).value =
+            data.status ||
+            "Menunggu";
+
+
+        modal.classList.add(
+            "show"
+        );
+
+
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+    }
+
+
+    /* =====================================================
+       CLOSE DETAIL
+       ===================================================== */
+
+    function closeDetail() {
+
+        const modal =
+            document.getElementById(
+                "detailModal"
+            );
+
+
+        if (modal) {
+
+            modal.classList.remove(
+                "show"
+            );
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
+
+
+        pengaduanTerpilih =
+            null;
+
+    }
+
+
+    /* =====================================================
+       SIMPAN PERUBAHAN
+       ===================================================== */
+
+    async function simpanPerubahan() {
+
+        if (!pengaduanTerpilih) {
+
+            alert(
+                "Data pengaduan belum dipilih."
+            );
+
+            return;
+
+        }
+
+
+        const status =
+            document.getElementById(
+                "detailStatusSelect"
+            ).value;
+
+
+        const tanggapan =
+            document.getElementById(
+                "responseText"
+            ).value.trim();
+
+
+        const token =
+            pengaduanTerpilih.token;
+
+
+        if (!token) {
+
+            alert(
+                "Token pengaduan tidak ditemukan."
+            );
+
+            return;
+
+        }
+
+
+        const tombol =
+            document.getElementById(
+                "saveButton"
+            );
+
+
+        if (tombol) {
+
+            tombol.disabled = true;
+
+            tombol.textContent =
+                "Menyimpan...";
+
+        }
+
+
+        /*
+         * Timeout simpan
+         */
+
+        const controller =
+            new AbortController();
+
+
+        const timeout =
+            setTimeout(
+                function () {
+
+                    controller.abort();
+
+                },
+                10000
+            );
+
+
+        try {
+
+            const response =
+                await fetch(
+                    API_URL,
+                    {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "text/plain;charset=utf-8"
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                action:
+                                    "updatePengaduan",
+
+                                token:
+                                    token,
+
+                                status:
+                                    status,
+
+                                tanggapan:
+                                    tanggapan
+
+                            }),
+
+                        signal:
+                            controller.signal
+
+                    }
+                );
+
+
+            clearTimeout(timeout);
+
+
+            const text =
+                await response.text();
+
+
+            console.log(
+                "Response update:",
+                text
+            );
+
+
+            let result;
+
+
+            try {
+
+                result =
+                    JSON.parse(text);
+
+            }
+
+            catch {
+
+                result = null;
+
+            }
+
+
+            if (
+                result &&
+                result.success === false
+            ) {
+
+                throw new Error(
+                    result.message ||
+                    "Gagal menyimpan perubahan."
+                );
+
+            }
+
+
+            /*
+             * Update data lokal
+             */
+
+            const index =
+                semuaPengaduan.findIndex(
+                    function (item) {
+
+                        return String(
+                            item.token
+                        ) ===
+                        String(token);
+
+                    }
+                );
+
+
+            if (index !== -1) {
+
+                semuaPengaduan[
+                    index
+                ].status =
+                    status;
+
+
+                semuaPengaduan[
+                    index
+                ].tanggapan =
+                    tanggapan;
+
+            }
+
+
+            updateStatistik();
+
+            tampilkanPengaduan();
+
+            closeDetail();
+
+
+            alert(
+                "Perubahan berhasil disimpan."
+            );
+
+        }
+
+        catch (error) {
+
+            clearTimeout(timeout);
+
+
+            console.error(
+                "Gagal menyimpan:",
+                error
+            );
+
+
+            if (
+                error.name === "AbortError"
+            ) {
+
+                alert(
+                    "Proses menyimpan terlalu lama. Periksa koneksi Google Apps Script."
+                );
+
+            }
+
+            else {
+
+                alert(
+                    "Gagal menyimpan perubahan.\n\n" +
+                    error.message
+                );
+
+            }
+
+        }
+
+        finally {
+
+            if (tombol) {
+
+                tombol.disabled =
+                    false;
+
+                tombol.textContent =
+                    "Simpan Perubahan";
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       STATISTIK
+       ===================================================== */
+
+    function updateStatistik() {
+
+        const total =
+            semuaPengaduan.length;
+
+
+        const menunggu =
+            semuaPengaduan.filter(
+                function (item) {
+
+                    return String(
+                        item.status ||
+                        "Menunggu"
+                    ).toLowerCase() ===
+                    "menunggu";
+
+                }
+            ).length;
+
+
+        const diproses =
+            semuaPengaduan.filter(
+                function (item) {
+
+                    return String(
+                        item.status ||
+                        ""
+                    ).toLowerCase() ===
+                    "diproses";
+
+                }
+            ).length;
+
+
+        const selesai =
+            semuaPengaduan.filter(
+                function (item) {
+
+                    return String(
+                        item.status ||
+                        ""
+                    ).toLowerCase() ===
+                    "selesai";
+
+                }
+            ).length;
+
+
+        const totalPengaduan =
+            document.getElementById(
+                "totalPengaduan"
+            );
+
+
+        const totalMenunggu =
+            document.getElementById(
+                "totalMenunggu"
+            );
+
+
+        const totalDiproses =
+            document.getElementById(
+                "totalDiproses"
+            );
+
+
+        const totalSelesai =
+            document.getElementById(
+                "totalSelesai"
+            );
+
+
+        if (totalPengaduan) {
+
+            totalPengaduan.textContent =
+                total;
+
+        }
+
+
+        if (totalMenunggu) {
+
+            totalMenunggu.textContent =
+                menunggu;
+
+        }
+
+
+        if (totalDiproses) {
+
+            totalDiproses.textContent =
+                diproses;
+
+        }
+
+
+        if (totalSelesai) {
+
+            totalSelesai.textContent =
+                selesai;
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SEARCH
+       ===================================================== */
+
+    const searchInput =
+        document.getElementById(
+            "searchInput"
+        );
+
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            function () {
+
+                tampilkanPengaduan();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       FILTER
+       ===================================================== */
+
+    const statusFilter =
+        document.getElementById(
+            "statusFilter"
+        );
+
+
+    if (statusFilter) {
+
+        statusFilter.addEventListener(
+            "change",
+            function () {
+
+                tampilkanPengaduan();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       FUNGSI BANTU
+       ===================================================== */
+
+    function potongTeks(
+        teks,
+        panjang
+    ) {
+
+        teks =
+            String(
+                teks || ""
+            );
+
+
+        if (
+            teks.length <= panjang
+        ) {
+
+            return teks;
+
+        }
+
+
+        return (
+            teks.substring(
+                0,
+                panjang
+            ) + "..."
+        );
+
+    }
+
+
+    function escapeHTML(
+        text
+    ) {
+
+        const div =
+            document.createElement(
+                "div"
+            );
+
+
+        div.textContent =
+            String(
+                text ?? ""
+            );
+
+
+        return div.innerHTML;
+
+    }
+
+
+    function escapeJS(
+        text
+    ) {
+
+        return String(
+            text ?? ""
+        )
+            .replace(
+                /\\/g,
+                "\\\\"
+            )
+            .replace(
+                /'/g,
+                "\\'"
+            )
+            .replace(
+                /\r/g,
+                "\\r"
+            )
+            .replace(
+                /\n/g,
+                "\\n"
+            );
+
+    }
+
+
+    function formatTanggal(
+        tanggal
+    ) {
+
+        if (!tanggal) {
+
+            return "-";
+
+        }
+
+
+        const date =
+            new Date(
+                tanggal
+            );
+
+
+        if (
+            isNaN(
+                date.getTime()
+            )
+        ) {
+
+            return String(
+                tanggal
+            );
+
+        }
+
+
+        return date.toLocaleString(
+            "id-ID",
+            {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       LOGOUT
+       ===================================================== */
+
+    function logoutAdmin() {
+
+        const yakin =
+            confirm(
+                "Apakah Anda yakin ingin logout?"
+            );
+
+
+        if (!yakin) {
+            return;
+        }
+
+
+        sessionStorage.removeItem(
+            "adminLoggedIn"
+        );
+
+
+        window.location.href =
+            "login.html";
+
+    }
+
+
+    /* =====================================================
+       MODAL OVERLAY
+       ===================================================== */
+
+    const modalOverlay =
+        document.querySelector(
+            ".modal-overlay"
+        );
+
+
+    if (modalOverlay) {
+
+        modalOverlay.addEventListener(
+            "click",
+            function () {
+
+                closeDetail();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       ESCAPE UNTUK MODAL
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeDetail();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       LOAD SAAT HALAMAN DIBUKA
+       ===================================================== */
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            loadPengaduan();
+
+        }
+    );
+
+</script>
+
+</body>
+
+</html>

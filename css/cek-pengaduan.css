@@ -1,0 +1,767 @@
+/* =========================================================
+   CEK PENGADUAN
+   MODERN BLUE THEME
+   ========================================================= */
+
+:root {
+    --blue-950: #061728;
+    --blue-900: #0a2238;
+    --blue-800: #103d63;
+    --blue-700: #15558a;
+    --blue-600: #1d6da8;
+    --blue-500: #2d82c4;
+    --blue-400: #4b9bd2;
+    --blue-200: #b8d8ec;
+    --blue-100: #e5f1fa;
+    --blue-50: #f4f9fd;
+
+    --text-dark: #172635;
+    --text-medium: #526473;
+    --text-light: #7c8c99;
+
+    --white: #ffffff;
+    --border: #dce7ef;
+
+    --shadow-sm: 0 8px 25px rgba(8, 43, 72, 0.07);
+    --shadow-md: 0 15px 40px rgba(8, 43, 72, 0.11);
+    --shadow-lg: 0 25px 65px rgba(8, 43, 72, 0.15);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "DM Sans", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(45, 130, 196, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(29, 109, 168, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f4f9fd 0%,
+            #eef6fb 50%,
+            #f8fbfd 100%
+        );
+
+    color: var(--text-dark);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: rgba(6, 23, 40, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+nav {
+    max-width: 1100px;
+    min-height: 72px;
+
+    margin: auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+nav a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 15px;
+
+    color: rgba(255, 255, 255, 0.78);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 10px;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+
+    background: rgba(45, 130, 196, 0.18);
+
+    transform: translateY(-1px);
+}
+
+
+/* Garis biru ketika hover */
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+    bottom: 4px;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: var(--blue-400);
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.25s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.pengaduan-container {
+    position: relative;
+
+    width: calc(100% - 30px);
+    max-width: 850px;
+
+    min-height: calc(100vh - 72px);
+
+    margin: 0 auto;
+    padding: 85px 20px 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================================
+   DEKORASI BACKGROUND
+   ========================================================= */
+
+.pengaduan-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: 10px;
+    left: -260px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(45, 130, 196, 0.13),
+            rgba(45, 130, 196, 0) 70%
+        );
+
+    pointer-events: none;
+}
+
+.pengaduan-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: -230px;
+    bottom: 40px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(29, 109, 168, 0.10),
+            rgba(29, 109, 168, 0) 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   JUDUL
+   ========================================================= */
+
+.pengaduan-container h1 {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 12px;
+
+    color: var(--text-dark);
+
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    text-align: center;
+
+    letter-spacing: -0.03em;
+}
+
+
+/* Garis dekorasi bawah judul */
+
+.pengaduan-container h1::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 17px auto 0;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        var(--blue-800),
+        var(--blue-400)
+    );
+}
+
+
+/* =========================================================
+   DESKRIPSI
+   ========================================================= */
+
+.pengaduan-container > p {
+    position: relative;
+    z-index: 2;
+
+    margin-bottom: 32px;
+
+    color: var(--text-medium);
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CARD UTAMA
+   ========================================================= */
+
+.pengaduan-container > div:not(#hasilCek) {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    max-width: 650px;
+
+    padding: 34px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid rgba(220, 231, 239, 0.95);
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow: var(--shadow-lg);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    overflow: hidden;
+}
+
+
+/* Garis biru bagian atas card */
+
+.pengaduan-container > div:not(#hasilCek)::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        var(--blue-950),
+        var(--blue-600),
+        var(--blue-400)
+    );
+}
+
+
+/* Dekorasi lingkaran */
+
+.pengaduan-container > div:not(#hasilCek)::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    top: -75px;
+    right: -55px;
+
+    border-radius: 50%;
+
+    border: 18px solid rgba(45, 130, 196, 0.06);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   INPUT TOKEN
+   ========================================================= */
+
+#token {
+    position: relative;
+    z-index: 2;
+
+    flex: 1;
+
+    width: 100%;
+    height: 56px;
+
+    padding: 0 18px;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: var(--text-dark);
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+#token::placeholder {
+    color: #9aa8b3;
+}
+
+#token:hover {
+    border-color: var(--blue-300);
+}
+
+#token:focus {
+    border-color: var(--blue-500);
+
+    box-shadow:
+        0 0 0 4px rgba(45, 130, 196, 0.10),
+        0 5px 15px rgba(8, 43, 72, 0.05);
+}
+
+
+/* =========================================================
+   TOMBOL CEK PENGADUAN
+   ========================================================= */
+
+.pengaduan-container button {
+    position: relative;
+    z-index: 2;
+
+    flex: 0 0 auto;
+
+    min-width: 160px;
+    height: 56px;
+
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        var(--blue-900),
+        var(--blue-600)
+    );
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 23px rgba(21, 85, 138, 0.23);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.pengaduan-container button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 30px rgba(21, 85, 138, 0.28);
+
+    filter: brightness(1.06);
+}
+
+.pengaduan-container button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   HASIL CEK
+   ========================================================= */
+
+#hasilCek {
+    position: relative;
+    z-index: 4;
+
+    width: 100%;
+    max-width: 650px;
+
+    margin-top: 22px;
+
+    color: var(--text-dark);
+}
+
+
+/* Jika hasil berupa card */
+
+#hasilCek > div {
+    padding: 25px;
+
+    border: 1px solid var(--blue-200);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            var(--blue-50)
+        );
+
+    box-shadow: var(--shadow-md);
+
+    animation: resultAppear 0.4s ease both;
+}
+
+
+/* =========================================================
+   HASIL TEXT
+   ========================================================= */
+
+#hasilCek h3,
+#hasilCek h4 {
+    margin-bottom: 10px;
+
+    color: var(--text-dark);
+}
+
+#hasilCek p {
+    margin: 6px 0;
+
+    color: var(--text-medium);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#hasilCek strong {
+    color: var(--blue-700);
+}
+
+
+/* =========================================================
+   LINK DALAM HASIL
+   ========================================================= */
+
+#hasilCek a {
+    color: var(--blue-600);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+#hasilCek a:hover {
+    color: var(--blue-800);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        justify-content: center;
+
+        gap: 2px;
+
+        padding: 0 15px;
+    }
+
+    nav a {
+        padding: 9px 10px;
+
+        font-size: 13px;
+    }
+
+    .pengaduan-container {
+        padding-top: 65px;
+    }
+
+    .pengaduan-container > div:not(#hasilCek) {
+        padding: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+    header {
+        position: relative;
+    }
+
+    nav {
+        min-height: auto;
+
+        padding: 12px 10px;
+
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 8px 10px;
+
+        font-size: 12px;
+    }
+
+
+    .pengaduan-container {
+        width: 100%;
+
+        min-height: calc(100vh - 60px);
+
+        padding: 55px 15px 70px;
+    }
+
+
+    .pengaduan-container h1 {
+        font-size: 32px;
+    }
+
+
+    .pengaduan-container > p {
+        margin-bottom: 25px;
+
+        font-size: 14px;
+    }
+
+
+    .pengaduan-container > div:not(#hasilCek) {
+        padding: 22px 18px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+
+        border-radius: 21px;
+    }
+
+
+    #token {
+        flex: none;
+
+        width: 100%;
+
+        height: 53px;
+    }
+
+
+    .pengaduan-container button {
+        width: 100%;
+
+        height: 53px;
+
+        min-width: 0;
+    }
+
+
+    #hasilCek {
+        margin-top: 18px;
+    }
+
+
+    #hasilCek > div {
+        padding: 20px;
+
+        border-radius: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE KECIL
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .pengaduan-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .pengaduan-container h1 {
+        font-size: 29px;
+    }
+
+    .pengaduan-container > div:not(#hasilCek) {
+        padding: 19px 15px;
+    }
+
+    nav a {
+        padding: 7px 8px;
+
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(45, 130, 196, 0.25);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
